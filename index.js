@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 import dotenv from "dotenv";
 import { bootstrap } from "./src/index.router.js";
 import morgan from 'morgan'
-
+import cors from 'cors'
 
 
 //set directory dirname
@@ -20,6 +20,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
+app.use(cors())
 bootstrap(app);
 
 dbConnection();
